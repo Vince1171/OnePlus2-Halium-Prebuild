@@ -22,6 +22,9 @@ chmod u+s /usr/lib/dbus-1.0/dbus-daemon-launch-helper
 adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt
 
 mkdir -p /etc/system-image/config.d
+mkdir /lib/firmware
+ln -s /system/etc/firmware/* /lib/firmware/
+ln -s /firmware/image/*  /lib/firmware/
 ```
 
 ### For Ubuntu Touch Anbox (WIP)
