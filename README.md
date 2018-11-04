@@ -25,6 +25,7 @@ mkdir -p /etc/system-image/config.d
 mkdir /lib/firmware
 ln -s /system/etc/firmware/* /lib/firmware/
 ln -s /firmware/image/*  /lib/firmware/
+echo manual | tee /etc/init/apparmor.override
 ```
 
 ### For Ubuntu Touch Anbox (WIP)
