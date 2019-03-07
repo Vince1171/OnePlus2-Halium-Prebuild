@@ -26,6 +26,12 @@ mkdir /lib/firmware
 ln -s /system/etc/firmware/* /lib/firmware/
 # ln -s /firmware/image/*  /lib/firmware/
 echo manual | tee /etc/init/apparmor.override
+
+cd /tmp
+wget https://ci.ubports.com/job/pulseaudio-modules-droid/job/PR-1/3/artifact/pulseaudio-modules-droid2_0.1+0~20181121174750.3~1.gbp54cf4b_armhf.deb
+dpkg -i pulseaudio-modules-droid2_0.1+0~20181121174750.3~1.gbp54cf4b_armhf.deb
+sed -i -e "s/load-module module-droid-discover voice_virtual_stream=true/load-module module-droid-card rate=48000 quirks=+no_hw_volume/" /etc/pulse/touch.pa
+
 ```
 
 ### For Ubuntu Touch Anbox (WIP)
