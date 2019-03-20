@@ -1,5 +1,17 @@
 # OnePlus2-Halium-Prebuild
 
+## what works what don't work?
+ * [x] boot
+  * [x] graphics
+  * [ ] calls
+  * [x] sound
+  * [x] gps  (only by script ```test_gps``` no with GUI...)
+  * [x] wifi (FIXED)
+  * [ ] Bluetooth (WIP+)
+  * [ ] Camera
+  * [x] anbox
+
+
 ### For Ubuntu Touch
 
 just use the prebuild image just as  a normal compiled image.
