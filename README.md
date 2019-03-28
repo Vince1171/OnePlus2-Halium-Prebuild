@@ -5,7 +5,7 @@
   * [x] graphics
   * [ ] calls
   * [x] sound
-  * [x] gps  (only by script ```test_gps``` no with GUI...)
+  * [x] gps
   * [x] wifi (FIXED)
   * [ ] Bluetooth (WIP+)
   * [ ] Camera
