@@ -27,19 +27,13 @@ then while in TWRP
 some command are needed in order to get a working UT device (run as root).
 ```
 chmod 666 /dev/kgsl-3d0
-
 adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt
-
-mkdir -p /etc/system-image/config.d
-mkdir /lib/firmware
-ln -s /system/etc/firmware/* /lib/firmware/
-# ln -s /firmware/image/*  /lib/firmware/
 echo manual | tee /etc/init/apparmor.override
 
 cd /tmp
-wget https://ci.ubports.com/job/pulseaudio-modules-droid/job/PR-1/3/artifact/pulseaudio-modules-droid2_0.1+0~20181121174750.3~1.gbp54cf4b_armhf.deb --no-check-certificate
-dpkg -i pulseaudio-modules-droid2_0.1+0~20181121174750.3~1.gbp54cf4b_armhf.deb
-sed -i -e "s/load-module module-droid-discover voice_virtual_stream=true/load-module module-droid-card rate=48000 /" /etc/pulse/touch.pa
+wget https://ci.ubports.com/job/pulseaudio-modules-droid/job/PR-1/8/artifact/pulseaudio-modules-droid-24_11.1.76+0~20190225000127.8~1.gbp826b96_armhf.deb --no-check-certificate
+dpkg -i pulseaudio-modules-droid-24_11.1.76+0~20190225000127.8~1.gbp826b96_armhf.deb
+sed -i -e "s/load-module module-droid-discover voice_virtual_stream=true/load-module module-droid-card-24/" /etc/pulse/touch.pa
 
 ```
 
