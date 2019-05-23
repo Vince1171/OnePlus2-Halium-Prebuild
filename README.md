@@ -30,9 +30,7 @@ chmod 666 /dev/kgsl-3d0
 adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt
 echo manual | tee /etc/init/apparmor.override
 
-cd /tmp
-wget https://ci.ubports.com/job/pulseaudio-modules-droid/job/PR-1/8/artifact/pulseaudio-modules-droid-24_11.1.76+0~20190225000127.8~1.gbp826b96_armhf.deb --no-check-certificate
-dpkg -i pulseaudio-modules-droid-24_11.1.76+0~20190225000127.8~1.gbp826b96_armhf.deb
+apt update && apt install pulseaudio-modules-droid-24 -y
 sed -i -e "s/load-module module-droid-discover voice_virtual_stream=true/load-module module-droid-card-24/" /etc/pulse/touch.pa
 
 ```
