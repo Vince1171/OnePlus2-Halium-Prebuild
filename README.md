@@ -24,13 +24,6 @@ then while in TWRP
 ```adb shell 'touch /data/.writable_image; mkdir /a; mount /data/rootfs.img /a; echo manual | tee /a/etc/init/rsyslog.override;  touch /a/.writable_device_image; umount /a; sync'```
 
 
-some command are needed in order to get a working UT device (run as root).
-```
-chmod 666 /dev/kgsl-3d0
-adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt
-echo manual | tee /etc/init/apparmor.override
-```
-
 ### For Ubuntu Touch Anbox (WIP)
 
 follow the instruction above, then follow this.
