@@ -16,8 +16,8 @@
 
 just use the prebuild image just as  a normal compiled image.
 install it with the JBB's halium-install script [here](https://github.com/JBBgameich/halium-install)
-and get the ubports edge rootfs from [here](https://ci.ubports.com/job/xenial-rootfs-armhf/lastSuccessfulBuild/artifact/out/ubports-touch.rootfs-xenial-armhf.tar.gz)
-```./halium-install -p ut ubports-touch.rootfs-xenial-edge-armhf.tar.gz system.img```
+and get the ubports edge rootfs from [here](https://ci.ubports.com/job/xenial-hybris-edge-rootfs-armhf/lastSuccessfulBuild/artifact/out/ubuntu-touch-hybris-xenial-edge-armhf-rootfs.tar.gz)
+```./halium-install -p ut ubuntu-touch-hybris-xenial-edge-armhf-rootfs.tar.gz system.img```
 ```sudo fastboot flash boot halium-boot.img```
 
 then while in TWRP
@@ -29,25 +29,21 @@ some command are needed in order to get a working UT device (run as root).
 chmod 666 /dev/kgsl-3d0
 adduser --force-badname --system --home /nonexistent --no-create-home --quiet _apt
 echo manual | tee /etc/init/apparmor.override
-
-apt update && apt install pulseaudio-modules-droid-24 -y
-sed -i -e "s/load-module module-droid-discover voice_virtual_stream=true/load-module module-droid-card-24/" /etc/pulse/touch.pa
-
 ```
 
 ### For Ubuntu Touch Anbox (WIP)
 
 follow the instruction above, then follow this.
 
-reflash the boot
+~reflash the boot~ (anbox binder is now integrated into the default halium-noot.img)
 
 ```sudo fastboot flash boot halium-boot-anbox.img```
 
-check if exist
-/dev/anbox-binder
+ ~check if exist~
+~/dev/anbox-binder~
 
 
-if it doesn't, you are not using the right ```halium-boot.img```
+~if it doesn't, you are not using the right halium-boot~
 
 then
 ```
